@@ -1,6 +1,8 @@
 """
 Cryptocurrency Twitter Bot.
 
+Get data from CoinMarketCap and publish on Twitter.
+
 Author: Bruno Santos
 """
 
@@ -9,7 +11,6 @@ import time
 import twitter
 import requests
 
-sleep = 300
 
 api = twitter.Api( consumer_key        = os.environ['consumer_key'],
                    consumer_secret     = os.environ['consumer_secret'],
@@ -18,6 +19,8 @@ api = twitter.Api( consumer_key        = os.environ['consumer_key'],
 
 BTC_api_url = 'https://api.coinmarketcap.com/v2/ticker/1/'
 ETH_api_url = 'https://api.coinmarketcap.com/v2/ticker/1027/'
+
+sleep = 300
 
 while True:
     USD = requests.get(BTC_api_url).json()['data']['quotes']['USD']['price']
