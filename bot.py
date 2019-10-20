@@ -24,11 +24,11 @@ sleep = 300
 
 while True:
     USD = requests.get(BTC_api_url).json()['data']['quotes']['USD']['price']
-    print('1 BTC = %s USD' % USD)
-    api.PostUpdate('1 BTC = %s USD #bitcoin #cryptocurrency #blockchain' % USD)
+    print(f'1 BTC = {USD} USD')
+    api.PostUpdate(f'1 BTC = {USD} USD #bitcoin #cryptocurrency #blockchain')
     time.sleep(sleep)
 
     USD = requests.get(ETH_api_url).json()['data']['quotes']['USD']['price']
-    print('1 ETH = %s USD' % USD)
-    api.PostUpdate('1 ETH = %s USD #ethereum #cryptocurrency #blockchain' % USD)
+    print(f'1 ETH = {USD} USD')
+    api.PostUpdate(f'1 ETH = {USD} USD #ethereum #cryptocurrency #blockchain')
     time.sleep(sleep)
